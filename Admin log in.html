@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<title>login page </title>
+    <style type="text/css">
+        body 
+{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+  background-repeat:  no-repeat; 
+    background-size: 100%;
+  }
+
+h1
+{
+    font-size: 250%;
+    background-color: black;
+    color:white;
+    text-align:center;
+    border-bottom:4px solid green;
+  
+}
+img
+{
+    position: absolute;
+    top: 10px;
+    width:150px;
+    height:50px;
+}
+fieldset
+{
+    border-color:green;
+    border-style:solid;
+    color: white;
+    position:absolute;
+    text-align: left;
+    top: 20%;
+    left: 30%;
+    font-size:35px;
+    padding:50px 60px;
+    background-color:black;
+   width: 30%;
+   height: 40%
+}
+legend
+{
+   text-align:center;
+   color:white;
+}
+
+input[type=text]
+{
+ font-size: large;
+    width:100%;
+    border:none;
+}
+input[type=password] 
+{
+    width: 100%;
+    border:none;
+font-size: large;
+
+}
+input[type=submit]
+{
+    width:40%;
+    font-size: x-large;
+    background-color: green;
+    align-self: center;
+    border-radius:8px;
+    color:white;
+    padding:10px 20px;
+}
+input[type=submit]:hover 
+{
+    background-color: white;
+    color: green;
+}
+a {
+    width:50%;
+    font-size: x-large;
+    background-color: green;
+    align-self: center;
+    border-radius:8px;
+    color:white;
+    padding:10px 20px;
+    text-decoration: none;
+}
+a:hover{
+    background-color: white;
+    color: green;
+}
+    </style>
+
+    <script type="text/javascript">
+        function checkform()
+        {
+            if(document.getElementById("name").value == 'admin' && document.getElementById("pw").value.length>6)
+            {
+            setTimeout(function() {window.location = "home admin.html";})
+            }
+             else if (document.getElementById("name").value == "")
+            {
+             alert("Invalid username.");
+            }
+            else if(document.getElementById("pw").value.length<6)
+            {
+                alert("Invalid password. must be at least 6 characters.")
+            }
+        }
+    </script>
+</head>
+<body background="login.jpeg">
+	<H1>Login as Admin</H1>
+    <img src="logo.jpeg">
+<form method="post" action="" enctype="multipart/form-data" onsubmit="return checkform();">
+    <fieldset>
+        <legend>Admin info</legend>
+   Name <br /><input type="text" name="name" id="name" placeholder="Enter your name.." required="Name is empty"> <br /><br />
+   Password<br /><input type="password" name="password" id="pw" placeholder="Enter your password.." required="password is empty"><br><br />
+   <input type="submit" name="submit" onsubmit="return(checkform())">
+    </fieldset></form>
+
+</body>
+</html>
